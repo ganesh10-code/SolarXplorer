@@ -114,49 +114,49 @@ body {
 .mercury {
   width: 10px;
   height: 10px;
-  background-image: url("/Mercury.jpg");
+  background-image: url("/images/Mercury.jpg");
 }
 
 .venus {
   width: 18px;
   height: 18px;
-  background-image: url("/Venus.jpg");
+  background-image: url("/images/Venus.jpg");
 }
 
 .earth {
   width: 20px;
   height: 20px;
-  background-image: url("/Earth.jpg");
+  background-image: url("images/Earth.jpg");
 }
 
 .mars {
   width: 15px;
   height: 15px;
-  background-image: url("Mars.jpg");
+  background-image: url("/images/Mars.jpg");
 }
 
 .jupiter {
   width: 35px;
   height: 35px;
-  background-image: url("/Jupiter.jpg");
+  background-image: url("/images/Jupiter.jpg");
 }
 
 .saturn {
   width: 30px;
   height: 30px;
-  background-image: url("Saturn.jpg");
+  background-image: url("/images/Saturn.jpg");
 }
 
 .uranus {
   width: 25px;
   height: 25px;
-  background-image: url("Uranus.jpg");
+  background-image: url("/images/Uranus.jpg");
 }
 
 .neptune {
   width: 25px;
   height: 25px;
-  background-image: url("Neptune.jpg");
+  background-image: url("/images/Neptune.jpg");
 }
 
 .moon-orbit {
