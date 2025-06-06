@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="space">
+      <button class="menu-toggle">&#9776;</button>
+      <div class="planet-buttons">
+        <button class="planet-button mercury-button">Mercury</button>
+        <button class="planet-button venus-button">Venus</button>
+        <button class="planet-button earth-button">Earth</button>
+        <button class="planet-button mars-button">Mars</button>
+        <button class="planet-button jupiter-button">Jupiter</button>
+        <button class="planet-button saturn-button">Saturn</button>
+        <button class="planet-button uranus-button">Uranus</button>
+        <button class="planet-button neptune-button">Neptune</button>
+      </div>
+
+      <div class="solar-system">
+        <div class="title">
+          <span id="typing-title"></span><span class="cursor"></span>
+        </div>
+
+        <div class="sun"></div>
+        <div class="orbit-container mercury-orbit">
+          <div class="planet mercury"></div>
+        </div>
+
+        <div class="orbit-container venus-orbit">
+          <div class="planet venus"></div>
+        </div>
+
+        <div class="orbit-container earth-orbit">
+          <div class="planet earth">
+            <div class="moon-orbit">
+              <div class="moon"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="orbit-container mars-orbit">
+          <div class="planet mars"></div>
+        </div>
+
+        <div class="orbit-container jupiter-orbit">
+          <div class="planet jupiter"></div>
+        </div>
+
+        <div class="orbit-container saturn-orbit">
+          <div class="planet saturn"></div>
+        </div>
+
+        <div class="orbit-container uranus-orbit">
+          <div class="planet uranus"></div>
+        </div>
+
+        <div class="orbit-container neptune-orbit">
+          <div class="planet neptune"></div>
+        </div>
+      </div>
+      <div class="info-panel">
+        <div class="info-panel-header">
+          <button class="back-button">← Back</button>
+          <h2 class="planet-name">Select a planet</h2>
+        </div>
+        <p class="planet-description">
+          Click on a planet button to learn more about it.
+        </p>
+        <ul class="planet-stats">
+          <li>
+            <strong>Orbital Speed:</strong> <span class="planet-speed">-</span>
+          </li>
+          <li>
+            <strong>Distance from Earth:</strong>
+            <span class="planet-distance">-</span>
+          </li>
+          <li>
+            <strong>Diameter:</strong> <span class="planet-diameter">-</span>
+          </li>
+          <li>
+            <strong>Number of Moons:</strong>
+            <span class="planet-moons">-</span>
+          </li>
+          <li>
+            <strong>Day Length:</strong> <span class="planet-day">-</span>
+          </li>
+          <li>
+            <strong>Year Length:</strong> <span class="planet-year">-</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="stars" id="stars-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
