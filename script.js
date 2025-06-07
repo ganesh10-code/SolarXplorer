@@ -117,6 +117,10 @@ menuToggle.addEventListener("click", () => {
 });
 
 backButton.addEventListener("click", () => {
+  document.querySelectorAll(".planet").forEach((planet) => {
+    planet.classList.remove("selected");
+  });
+
   if (isMobile()) {
     infoPanel.classList.remove("visible");
     planetButtons.classList.add("visible");
@@ -129,9 +133,20 @@ backButton.addEventListener("click", () => {
 
 document.querySelectorAll(".planet-button").forEach((button) => {
   button.addEventListener("click", () => {
+    // Remove selected class from all planets
+    document.querySelectorAll(".planet").forEach((planet) => {
+      planet.classList.remove("selected");
+    });
+
     const planetKey = button.classList[1].replace("-button", "");
     const data = planetData[planetKey];
     if (data) {
+      // Add selected class to the clicked planet
+      const selectedPlanet = document.querySelector(`.${planetKey}`);
+      if (selectedPlanet) {
+        selectedPlanet.classList.add("selected");
+      }
+
       nameEl.textContent = data.name;
       descEl.textContent = data.description;
       speedEl.textContent = data.speed;
@@ -153,19 +168,34 @@ document.querySelectorAll(".planet-button").forEach((button) => {
 });
 
 document.addEventListener("click", (event) => {
-  if (!isMobile()) return;
+  if (!isMobile()) {
+    const isClickInsidePanel =
+      planetButtons.contains(event.target) ||
+      infoPanel.contains(event.target) ||
+      menuToggle.contains(event.target) ||
+      backButton.contains(event.target);
 
-  const isClickInsidePanel =
-    planetButtons.contains(event.target) ||
-    infoPanel.contains(event.target) ||
-    menuToggle.contains(event.target) ||
-    backButton.contains(event.target);
+    if (!isClickInsidePanel) {
+      document.querySelectorAll(".planet").forEach((planet) => {
+        planet.classList.remove("selected");
+      });
+    }
+  } else {
+    const isClickInsidePanel =
+      planetButtons.contains(event.target) ||
+      infoPanel.contains(event.target) ||
+      menuToggle.contains(event.target) ||
+      backButton.contains(event.target);
 
-  if (!isClickInsidePanel) {
-    planetButtons.classList.remove("visible");
-    infoPanel.classList.remove("visible");
-    menuToggle.textContent = "☰";
-    updateButtonVisibility();
+    if (!isClickInsidePanel) {
+      planetButtons.classList.remove("visible");
+      infoPanel.classList.remove("visible");
+      menuToggle.textContent = "☰";
+      document.querySelectorAll(".planet").forEach((planet) => {
+        planet.classList.remove("selected");
+      });
+      updateButtonVisibility();
+    }
   }
 });
 
